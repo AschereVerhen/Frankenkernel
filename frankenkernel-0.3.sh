@@ -135,7 +135,6 @@ if lspci | grep -i "nvidia" &> /dev/null; then
         pacman -Rns nvidia; pacman -S nvidia-dkms
     elif pacman -Qq | grep -qw nvidia-open; then
         pacman -Rns nvidia-open; pacman -S nvidia-open-dkms
-    fi 
     else 
         echo "It looks like you are using nouveau drivers. good for you, ig."
     fi 
