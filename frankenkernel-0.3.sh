@@ -92,8 +92,8 @@ latest_kver=$(curl -s https://www.kernel.org/releases.json | jq -r '.latest_stab
 url="https://cdn.kernel.org/pub/linux/kernel/v6.x/linux-${latest_kver}.tar.xz"
 echo -e "\n Downloading Latest stable kernel, linux-${latest_kver} from kernel.org"
 run_or_dry "curl -LO \"${url}\""
-tar xpvf "linux-${latest_kver}.tar.xz"
-ln -s "linux-${latest_kver}" linux
+run_or_dry "tar xpvf \"linux-${latest_kver}.tar.xz\""
+run_or_dry "ln -s "linux-${latest_kver}" linux"
 cd linux
 
 compilation_done="null"
