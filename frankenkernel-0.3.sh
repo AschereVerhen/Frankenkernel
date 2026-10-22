@@ -167,11 +167,10 @@ if lspci | grep -i "NVIDIA" &> /dev/null; then
     elif pacman -Qq | grep -qx nvidia-open-dkms; then
         pacman -S --noconfirm nvidia-open-dkms ##Updating...
     else 
-        echo "It looks like you are using nouveau drivers. good for you, ig."
+        # The user is using nouveau
     fi 
 else
-    echo "It looks like you are using amd/intel gpu."
-    exit 0
+    #The user is using amd/intel gpu.
 fi 
 
 ##Cleaning...
